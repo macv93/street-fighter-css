@@ -94,13 +94,36 @@
         }
 
         .caption {
-
             margin: 0;
             position: absolute;
             top: 33%;
             transform: translateY(-50%);
             left: 5rem;
 
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            99% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        video[src='./just-ryu.mp4'] {
+            opacity: 0;
+            position: absolute;
+            animation-name: appear;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-delay: 200ms;
+            left: 0;
         }
     </style>
 </head>
@@ -119,6 +142,7 @@
         </ul>
     </div>
     <video autoplay muted src="./hadouken-animation.mp4"></video>
+    <video loop autoplay muted src="./just-ryu.mp4"></video>
 </div>
 
 
