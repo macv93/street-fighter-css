@@ -12,6 +12,7 @@
             align-items: center;
             background-color: black;
             --delay-multiplier: 65ms;
+            --hadouken-blue: #88afba;
         }
 
         @keyframes text-fade-in {
@@ -46,7 +47,7 @@
 
         .caption > ul {
             display: flex;
-            color: aqua;
+            color: var(--hadouken-blue);
         }
 
         .caption ul > li {
@@ -124,6 +125,7 @@
             animation-fill-mode: forwards;
             animation-delay: 200ms;
             left: 0;
+            pointer-events: none;
         }
     </style>
 </head>
