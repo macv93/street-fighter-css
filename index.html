@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            --delay-multiplier: 65ms;
+        }
+
+        @keyframes text-fade-in {
+            0% {
+                opacity: 0;
+            }
+            3% {
+                opacity: 0.5;
+            }
+            15% {
+                opacity: 1;
+            }
+            33% {
+                transform: translateY(-1rem);
+            }
+
+            66% {
+                transform: translateY(1rem);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gif-container {
+            position: relative;
+            margin: 0 auto;
+            transform: scale(3);
+        }
+
+        .caption > ul {
+            display: flex;
+            color: aqua;
+        }
+
+        .caption ul > li {
+            animation-name: text-fade-in;
+            animation-duration: 2.5s;
+            animation-fill-mode: forwards;
+            /* opacity: 0; */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+
+        }
+
+        li:nth-child(1) {
+            animation-delay: 250ms;
+        }
+
+        li:nth-child(2) {
+            animation-delay: 500ms;
+        }
+
+        li:nth-child(3) {
+            animation-delay: 650ms;
+        }
+
+        li:nth-child(4) {
+            animation-delay: calc(650ms + var(--delay-multiplier) * 1);
+        }
+
+        li:nth-child(5) {
+            animation-delay: calc(650ms + var(--delay-multiplier) * 2);
+        }
+
+        li:nth-child(6) {
+            animation-delay: calc(650ms + var(--delay-multiplier) * 3);
+        }
+
+        li:nth-child(7) {
+            animation-delay: calc(650ms + var(--delay-multiplier) * 4);
+        }
+
+        li:nth-child(8) {
+            animation-delay: calc(650ms + var(--delay-multiplier) * 5);
+        }
+
+        .caption {
+
+            margin: 0;
+            position: absolute;
+            top: 33%;
+            transform: translateY(-50%);
+            left: 5rem;
+
+        }
+    </style>
+</head>
+<body>
+<div class="gif-container">
+    <div class="caption">
+        <ul>
+            <li>H</li>
+            <li>A</li>
+            <li>D</li>
+            <li>O</li>
+            <li>U</li>
+            <li>K</li>
+            <li>E</li>
+            <li>N</li>
+        </ul>
+    </div>
+    <video autoplay muted src="./hadouken-animation.mp4"></video>
+</div>
+
+
+</body>
+</html>
