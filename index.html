@@ -8,7 +8,8 @@
         body {
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column-reverse;
+            justify-content: space-around;
             align-items: center;
             background-color: black;
             --delay-multiplier: 65ms;
@@ -42,7 +43,6 @@
         .gif-container {
             position: relative;
             margin: 0 auto;
-            transform: scale(3);
         }
 
         .caption > ul {
@@ -51,6 +51,7 @@
         }
 
         .caption ul > li {
+            font-size: 3rem;
             animation-name: text-fade-in;
             animation-duration: 2.5s;
             animation-fill-mode: forwards;
@@ -97,9 +98,9 @@
         .caption {
             margin: 0;
             position: absolute;
-            top: 33%;
+            top: 39%;
             transform: translateY(-50%);
-            left: 5rem;
+            left: 22rem;
 
         }
 
@@ -117,6 +118,10 @@
             }
         }
 
+        video {
+            height: calc(92px*3);
+        }
+
         video[src='./just-ryu.mp4'] {
             opacity: 0;
             position: absolute;
@@ -127,9 +132,40 @@
             left: 0;
             pointer-events: none;
         }
+
+        .char-selector > * {
+            height: 10rem;
+            width: 10rem;
+            background-color: blue;
+        }
+        .char-selector {
+            border: 1px solid white;
+            display: grid;
+            gap: 2px;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .char-selector > *:hover {
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+
+        .gif-container {
+            visibility: hidden;
+        }
+        .char-selector:hover + .gif-container {
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
+
+<div class="char-selector">
+    <div id="ryu-selection"></div>
+    <div id="bison-selection"></div>
+    <div id="balrog-selection"></div>
+</div>
+
 <div class="gif-container">
     <div class="caption">
         <ul>
@@ -146,7 +182,6 @@
     <video autoplay muted src="./hadouken-animation.mp4"></video>
     <video loop autoplay muted src="./just-ryu.mp4"></video>
 </div>
-
 
 </body>
 </html>
